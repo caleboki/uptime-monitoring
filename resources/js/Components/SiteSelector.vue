@@ -18,13 +18,23 @@
             </ul>
         </template>
     </vDropdown>
+
+    <VueFinalModal v-model="showNewSiteModal" class="flex justify-center items-start pt-16 md:pt-24" content-class="relative max-h-full rounded bg-white w-full max-w-2xl p-4 md:p-6" overlay-class="bg-gradient-to-r from-gray-800 to-gray-500 opacity-50" :esc-to-close="true">
+        Modal content
+    </VueFinalModal>
 </template>
 
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import { VueFinalModal } from 'vue-final-modal'
+import { ref } from 'vue'
+import 'vue-final-modal/style.css'
+
 
 defineProps({
     sites: Array
 })
+
+const showNewSiteModal = ref(false)
 
 </script>
